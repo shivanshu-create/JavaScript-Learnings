@@ -27,21 +27,43 @@
     Scissors
   </button>
 
+  <button onclick="resetScore()">Reset Score</button>
+
   <script>
+
+    const Score = {
+      win: 0,
+      lose: 0,
+      tie: 0
+    };
+
+    function resetScore() {
+      Score.win = 0;
+      Score.lose = 0;
+      Score.tie = 0;
+
+      alert(`Score has been reset\nYour Score: Wins ${Score.win} ,Losses ${Score.lose} ,Ties ${Score.tie}`);
+    }
 
     function playGame(myMove) {
       const computerMove = computerChoice();
 
       if (myMove === computerMove) {
-        alert(`I choose ${myMove}, and computer choose ${computerMove},It got Tie`);
+        Score.tie++;
+        
+        alert(`I choose ${myMove}, and computer choose ${computerMove},It got Tie\nYour Score: Wins ${Score.win} ,Losses ${Score.lose} ,Ties ${Score.tie}`);
       } else if (
         (myMove === 'Rock' && computerMove === 'Scissors') ||
         (myMove === 'Paper' && computerMove === 'Rock') ||
         (myMove === 'Scissors' && computerMove === 'Paper')
       ) {
-        alert(`I choose ${myMove}, and computer choose ${computerMove},You Won`);
+        Score.win++;
+        
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Won\nYour Score: Wins ${Score.win} ,Losses ${Score.lose} ,Ties ${Score.tie}`);
       } else {
-        alert(`I choose ${myMove}, and computer choose ${computerMove},You Lose`);
+        Score.lose++;
+        
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Lose\nYour Score: Wins ${Score.win} ,Losses ${Score.lose} ,Ties ${Score.tie}`);
       }
     }
 
