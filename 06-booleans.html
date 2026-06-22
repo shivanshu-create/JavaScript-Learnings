@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans Now</title>
+      
+  </head>
+  <body>
+    
+    <script> 
+    true
+    false
+     console.log(3 < 5);
+     console.log(typeof false);
+
+     console.log(5 == "5.00"); // == uses type conversion
+
+     console.log(5 === "5.00"); // just camparing
+
+     console.log(3 > 5 - 5); // mathamatical operator has higher priority then the camparison operator
+
+     if(false){
+      console.log("yes it is true");
+     }
+     else{
+      console.log("no its found false");
+     }
+     // these if and else are called branches - as these are nothing but dividing the direction
+
+
+     // truthy and falsy values
+     if(5){
+      console.log('truthy value bro!');
+     }
+     else{
+      console.log('ahh.. falsy value braa');
+     }
+
+     // Falsy values = false  0  ''  NaN  undefined  null
+     // othere then these all are Truthy values
+
+     const cartQuantity = 5;
+     if(cartQuantity) console.log('cart has products');
+     // it makes camparisons easy
+
+     // other operators
+
+     const result = 0 ? 'truthy' : 'falsy'; // Ternary operator
+     console.log(result);
+
+     false && console.log('hello');   // Guard operator
+
+     const messege = 5 && 'hello bro'; // Guard operator
+     console.log(messege);
+
+     const currency = 'EUR' || 'USD'; // Default/OR operator
+     console.log(currency);
+
+     currency = undefined || 'USD';
+     console.log(currency);
+    </script>
+  </body>
+</html>
+
+
+
+

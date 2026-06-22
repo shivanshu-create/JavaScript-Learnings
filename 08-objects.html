@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Now Objects</title>
+
+</head>
+
+<body>
+
+  <script>
+    const product = {
+      name: "Laptop",
+      price: 1000,
+      inStock: true
+    };
+
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+    console.log(product.inStock);
+
+    product.name = "Gaming Laptop";
+    product.price = 1500;
+    product.inStock = false;
+    console.log(product);
+
+    product.category = "Electronics"; // adding the property the object that does not exist will be added to the object
+    console.log(product); // now it will show the category property as well
+
+    delete product.category; // deleting the category property from the object
+    console.log(product); // now it will not show the category property as it has been deleted
+  </script>
+</body>
+
+</html>
+
+
+

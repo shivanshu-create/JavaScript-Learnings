@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booleans Now</title>
+      
+  </head>
+  <body>
+    <p>Let's Play Rock Paper and Scissors</p>
+
+    <button onclick="
+      let computerTrun = Math.random();
+      let computerMove = '';
+      let myMove = 'Rock';
+
+      if(computerTrun >= 0 && computerTrun < 1/3) computerMove = 'Rock';
+
+      if(computerTrun >= 1/3 && computerTrun < 2/3) computerMove = 'Paper';
+
+      if(computerTrun >= 2/3 && computerTrun < 1) computerMove = 'Scissors';
+
+      if(myMove === computerMove){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},It got Tie`);
+      }
+      if(computerMove === 'Paper'){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Lose`);
+      }
+      if(computerMove === 'Scissors'){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Won`);
+      }
+    ">
+      Rock
+    </button >
+
+    <button onclick="
+      let computerTrun = Math.random();
+      let computerMove = '';
+      let myMove = 'Paper';
+
+      if(computerTrun >= 0 && computerTrun < 1/3) computerMove = 'Rock';
+
+      if(computerTrun >= 1/3 && computerTrun < 2/3) computerMove = 'Paper';
+
+      if(computerTrun >= 2/3 && computerTrun < 1) computerMove = 'Scissors';
+
+      if(myMove === computerMove){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},It got Tie`);
+      }
+      if(computerMove === 'Scissors'){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Lose`);
+      }
+      if(computerMove === 'Rock'){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Won`);
+      }
+    ">
+      Paper
+    </button>
+
+    <button onclick="
+      let computerTrun = Math.random();
+      let computerMove = '';
+      let myMove = 'Scissors';
+
+      if(computerTrun >= 0 && computerTrun < 1/3) computerMove = 'Rock';
+
+      if(computerTrun >= 1/3 && computerTrun < 2/3) computerMove = 'Paper';
+
+      if(computerTrun >= 2/3 && computerTrun < 1) computerMove = 'Scissors';
+
+      if(myMove === computerMove){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},It got Tie`);
+      }
+      if(computerMove === 'Rock'){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Lose`);
+      }
+      if(computerMove === 'Paper'){
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Won`);
+      }
+    ">
+      Scissors
+    </button>
+    
+    <script> 
+    
+
+    </script>
+  </body>
+</html>
+
+
+
+

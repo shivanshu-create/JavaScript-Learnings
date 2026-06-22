@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Booleans Now</title>
+
+</head>
+
+<body>
+  <p>Let's Play Rock Paper and Scissors</p>
+
+  <button onclick="
+      playGame('Rock');
+    ">
+    Rock
+  </button>
+
+  <button onclick="
+      playGame('Paper');
+    ">
+    Paper
+  </button>
+
+  <button onclick="
+      playGame('Scissors');
+    ">
+    Scissors
+  </button>
+
+  <script>
+
+    function playGame(myMove) {
+      const computerMove = computerChoice();
+
+      if (myMove === computerMove) {
+        alert(`I choose ${myMove}, and computer choose ${computerMove},It got Tie`);
+      } else if (
+        (myMove === 'Rock' && computerMove === 'Scissors') ||
+        (myMove === 'Paper' && computerMove === 'Rock') ||
+        (myMove === 'Scissors' && computerMove === 'Paper')
+      ) {
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Won`);
+      } else {
+        alert(`I choose ${myMove}, and computer choose ${computerMove},You Lose`);
+      }
+    }
+
+    function computerChoice() {
+      const computerTrun = Math.random();
+      let computerMove = '';
+
+      if(computerTrun >= 0 && computerTrun < 1/3) computerMove = 'Rock';
+
+      if(computerTrun >= 1/3 && computerTrun < 2/3) computerMove = 'Paper';
+
+      if(computerTrun >= 2/3 && computerTrun < 1) computerMove = 'Scissors';
+
+      return computerMove;
+    }
+  </script>
+</body>
+
+</html>

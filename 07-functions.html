@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Functions</title>
+      
+  </head>
+  <body>
+    
+    <script> 
+      // just initialized the function here for reference 
+      function function1(){
+        console.log('hello bro');
+        console.log(2+4+5);
+        return;
+      }
+
+      // now function parameters and arguments
+      function calculate(value,taxRate){
+        console.log(value * taxRate);
+      }
+      calculate(100, 0.1);
+      calculate(200, 0.2);
+
+      // if you don't pass the parameter it will be undefined
+      // for example calculate(100)
+      // it will be NaN because undefined * 100 is NaN
+
+      // but if you don't wanna pass the parameter and want to use default value you can do it like this
+      // function calculate2(value, taxRate = 0.1){
+      
+
+    </script>
+  </body>
+</html>
+
+
+
+
