@@ -10,6 +10,7 @@
 
   <script>
     /*
+
     const product = {
       name: "Laptop",
       price: 1000,
@@ -34,8 +35,190 @@
 
     */
 
-    
+// --------------------------------------------
 
+    /*
+
+    // let's learn another way to instead of dot notation we can use bracket notation to access the properties of an object
+    const product = {
+      name: 'laptop',
+      price: 60000,
+      'delivery-time': '2 days'
+    };
+
+    console.log(product);
+    console.log(product['name']); // accessing the name property using bracket notation
+    console.log(product['price']); // accessing the price property using bracket notation
+
+    // benefit of using bracket notion campare to dot
+
+
+    console.log(product.delivery-time); // this will give an error because js thinks that we are trying to subtract the time property from the delivery property which does not exist in the object
+
+
+
+    // but if we do the same thing with bracket notation it will work fine
+    console.log(product['delivery-time']); // this will work fine because we are using bracket notation to access the property
+    // however, if we try to access a property that does not exist in the object using bracket notation it will return undefined
+
+    // so let's add the property in the object -> delivery-time
+    // now let's change the value of the delivery-time property using bracket notation
+    product['delivery-time'] = '3 days';
+    console.log(product['delivery-time']); // this will show the updated value of the delivery-time
+
+    // let's create a new property in the object using bracket notation
+    product['brand'] = 'Dell';
+    console.log(product); // this will show the updated object with the new property brand
+
+    // we can also create an object inside an object - as object is also a data type in js we can create an object inside an object - called nested object
+
+    const product2 = {
+      name: 'laptop',
+      price: 60000,
+      'delivery-time': '2 days',
+      ratings: {
+        stars: 4.5,
+        reviews: 100
+      },
+      brand: 'Dell'
+    };
+
+    // to access the nested object we can use dot notation or bracket notation multiple times
+    console.log(product2.ratings); // accessing the ratings property using dot notation
+    console.log(product2['ratings']); // accessing the ratings property using bracket notation
+    console.log(product2.ratings.stars); // accessing the stars property using dot notation
+    console.log(product2['ratings']['stars']); // accessing the stars property using bracket notation
+
+    // now we can also add a function as a property of an object - this is called a method
+    const product3 = {
+      name: 'laptop',
+      price: 60000,
+      'delivery-time': '2 days',
+      ratings: {
+        stars: 4.5,
+        reviews: 100
+      },
+      brand: 'Dell',
+      getDiscounted: function function1(){
+        console.log('the function inside object');
+      }
+    };
+    // now let's call the function using the object
+    product3.getDiscounted(); // this will call the function inside the object and will print 'the function inside object' in the console
+
+    // console.log() - is also a method of the console object - so we can say that console is an object and log is function inside the console object - so we can say that log is a method of the console object
+
+    console.log(typeof console); // this will show that console is an object
+    console.log(typeof console.log); // this will show that log is a function
+
+    // Math.random() - is also a method
+
+    // Math and console were built-in objects
+
+    // now we will study two more built-in objects called JSON and localStorage - JSON is a built-in object that provides methods to convert JavaScript objects to JSON strings and vice versa. localStorage is a built-in object that allows us to store data in the browser's local storage.
+
+    // json is a syntax similar to js object but it has less features than js object - double quotes are used for the property names and string values in json - json does not support functions as values - json does not support undefined as a value - json does not support comments - json is used to exchange data between a server and a client.
+
+    // json is used to exchange data between a server and a client - json is used to send data from the server to the client and vice versa - json is used to store data in a file - json is used to store data in a database - json is used to store data in a local storage - json is used to store data in a session storage - json is used to store data in a cookie.
+    
+    // one more thing about the json, it is different from typical js syntax - can be understood by other programming languages as well - universal data exchange format - so it is used to exchange data between different programming languages as well.
+
+    // let's convert js object to json string
+    JSON.stringify(product3); // this will convert the js object to json string
+
+    console.log(JSON.stringify(product3)); // this will show the json string in the console and function won't appear
+    
+    console.log(product3); // this will show the js object in the console and function will appear
+
+    console.log(typeof JSON.stringify(product3)); // this will show that the type of the json string is string
+
+    // now the json string can be sent to the server and the server can convert it back to js object using JSON.parse() method Or can be stored in a file or database or local storage or session storage or cookie.
+
+    JSON.parse(JSON.stringify(product3)); // this will convert the json string back to js object
+
+    console.log(JSON.parse(JSON.stringify(product3))); // this will show the js object in the console and function won't appear
+
+    // localStorage is a built-in object that allows us to store data in the browser's local storage.
+    // it means when we refresh the page or close the browser and open it again, the data will still be there in the local storage.
+
+    localStorage.setItem('product', JSON.stringify(product3)); // this will store the json string in the local storage with the key 'product'
+
+    console.log(localStorage.getItem('product')); // this will get the json string from the local storage with the key 'product'
+
+    // one more thing localStorage can only store strings, so we need to convert the js object to json string before storing it in the local storage and convert it back to js object after getting it from the local storage.
+
+    console.log(JSON.parse(localStorage.getItem('product'))); // this will convert the json string back to js object and show it in the console
+
+    */
+
+// --------------------------------------------
+
+    // Auto-Boxing -> js automatically converts the primitive data types to their corresponding object types when we try to access their properties or methods. This is called auto-boxing.
+
+    console.log('hello'.length); // this will show the length of the string here the length is property of the string object
+
+    console.log('hello'.toUpperCase()); // this will convert the string to uppercase here the toUpperCase() is a method of the string object
+
+    // auto-boxing is also works with numbers and booleans
+    // but doesn't works with null and undefined because they don't have any properties or methods. -> it will just give error.
+
+    // objects are reference in reality - they are stored in the memory and the variable holds the reference to the object in the memory. So when we assign an object to another variable, both variables hold the reference to the same object in the memory. So when we change the object using one variable, it will also change the object for the other variable as well.
+
+    const obj1 = {
+      name: 'obj1'
+    };
+
+    const obj2 = obj1; // both obj1 and obj2 hold the reference to the same object in the memory
+
+    console.log(obj1); // this will show the object with name 'obj1'
+    console.log(obj2); // this will also show the object with name 'obj1'
+
+    // here the obj2 has just copied the reference of the obj1 and not the actual object. So when we change the object using obj2, it will also change the object for obj1 as well.
+
+    // however we are using the const to iniliaze the object, but we can still change the properties of the object because the const only prevents us from changing the reference of the object, but it doesn't prevent us from changing the properties of the object.
+
+    // we can't compare the objects directly using the == or === operators because they compare the references of the objects and not the actual objects. So even if two objects have the same properties and values, they will be considered different objects if they have different references in the memory.
+
+    // but the copied object will have the same reference in the memory as the original object, so they will be considered the same object. 
+
+
+    // Let's learn some shortcuts for objects
+
+    const obj3 = {
+      messege : 'hello'
+    };
+    //  const messege = obj3.messege; // this is the normal way to access the property of the object and assign it to a variable with same name as the property of the object
+
+    const {messege} = obj3; // this is the shortcut way to access the property of the object and assign it to a variable with same name as the property of the object
+
+    // it will just create a variable with the same name as the property of the object and assign the value of the property to that variable. This is called destructuring assignment. 
+    console.log(messege); 
+
+    const obj4 = {
+      messege : messege, 
+    };
+
+    console.log(obj4); // this will show the object with the property messege and its value as 'hello'
+
+    // shorthand property
+
+    const obj5 = {
+      messege, // this is the shorthand way to create a property in the object with the same name as the variable and assign the value of the variable to that property. This is called shorthand property.
+    };
+
+    console.log(obj5); // this will show the object with the property messege and its value as 'hello'
+
+    // another last shortcut
+
+    const obj6 = {
+      sayHello() { // this is the shorthand way to create a method in the object with the same name as the function and assign the function to that method. This is called shorthand method.
+        console.log('hello');
+      }
+    };
+
+    console.log(obj6); // this will show the object with the method sayHello
+    
+    obj6.sayHello(); // this will call the method sayHello and print 'hello'
   </script>
 </body>
 
