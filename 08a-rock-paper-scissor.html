@@ -31,17 +31,20 @@
 
   <script>
 
-    const Score = {
+    let Score = JSON.parse(localStorage.getItem('score')) || {
       win: 0,
       lose: 0,
       tie: 0
-    };
+    }; // if the score is not present in the local storage then it will be initialized to 0
+    // if we didn't set the score to 0 then score will be null and we will get an error when we try to access the properties of the score object.
 
     function resetScore() {
       Score.win = 0;
       Score.lose = 0;
       Score.tie = 0;
 
+      localStorage.removeItem('score'); // removing the score from local storage so that it will not be saved in the browser and will be reset to 0 when the page is refreshed
+      
       alert(`Score has been reset\nYour Score: Wins ${Score.win} ,Losses ${Score.lose} ,Ties ${Score.tie}`);
     }
 
@@ -65,6 +68,7 @@
         
         alert(`I choose ${myMove}, and computer choose ${computerMove},You Lose\nYour Score: Wins ${Score.win} ,Losses ${Score.lose} ,Ties ${Score.tie}`);
       }
+      localStorage.setItem('score', JSON.stringify(Score)); // this will store the score in the local storage so that it will be saved in the browser and will not be reset to 0 when the page is refreshed
     }
 
     function computerChoice() {
