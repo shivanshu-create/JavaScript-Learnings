@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Projects</title>
+</head>
+
+<body>
+  <p>Youtube Subscribe Button</p>
+  <button onclick="
+    subscribe();
+  " class="js-subscribe">Subscribe</button>
+  <!--make sure if we are using innerHTML
+  then there shouldn't be any spaces or tab
+  otherwise we can't compare them-->
+  <script>
+    function subscrib() {
+      const buttonElement = document.querySelector('.js-subscribe');
+
+      if(buttonElement.innerText === 'Subscribe') buttonElement.innerText = 'Subscribed';
+
+      else buttonElement.innerText = 'Subscribe';
+    }
+  </script>
+</body>
+
+</html>

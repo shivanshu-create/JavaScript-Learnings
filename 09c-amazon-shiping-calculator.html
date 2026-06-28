@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Amazon Shiping Cost</title>
+
+  <style>
+      .btn {
+          display : block;
+          margin-bottom : 5px;
+      }
+  </style>
+
+</head>
+
+<body>
+  <p class="js-display"></p>
+  <p class="js-under"></p>
+  <p class="js-over"></p>
+  <input 
+  placeholder="cost of order" 
+  class="js-calculate" 
+  onkeydown="
+    if(event.key === 'Enter') calculateTotal();
+  "> 
+        <!-- for input to enter live in page-->
+        <!-- here the onkeydown is the event listner
+          they check for the event to happen when a even happen
+          they work-->
+        <!--console.log(event)-> it tells what the person is doing with the keyboard 
+          here the event is also a object the checks the every event by the user 
+          event.key -> will tell what key the user has pressed on the input -->
+  <button onclick="
+    calculateTotal();
+  ">Calculate</button>
+
+  <p class="js-total"></p>
+  <script>
+    document.querySelector('.js-display').innerHTML = 'Amazon Shipping Calculator';
+    document.querySelector('.js-under').innerHTML = 'Order under $40 = +$10 shipping';
+    document.querySelector('.js-over').innerHTML = 'Order under $40 = Free shipping';
+
+    function calculateTotal(){
+      const inputElement = document.querySelector('.js-calculate');
+      let cost = Number(inputElement.value); // default we get a string so we need to convert it to number
+
+      if(cost > 40) 
+        document.querySelector('.js-total').
+          innerHTML = `Total cost is $${cost}`
+
+      else{
+        cost += 10;
+        document.querySelector('.js-total').
+          innerHTML = `Total cost is $${cost}`
+      }
+    }
+
+    // window object -> everything on the browser
+    /*
+      window.document -> same as document
+      window.console -> same as console along
+      window.alert -> same as alert on the page
+
+      we never had to type "window." at the starting
+      because JavaScipt automatically adds it.
+    */
+
+  </script>
+</body>
+
+</html>
+
