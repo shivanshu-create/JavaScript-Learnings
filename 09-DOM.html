@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM now</title>
+  <!-- DOM stands for Document Object Model.
+              it is also a buit-in object in the browser that allow us to access and manipulate the HTML elements in the page.
+              -->
+</head>
+
+<body>
+  <button>hello</button>
+  <button class="second">second button</button>
+
+  <script>
+    /*
+    // -------------------------------
+      document.body.innerHTML = "<h1>hello</h1>";
+      // here the document is a object and body is a property of the document object that represents the body element in the HTML page.
+
+      // innerHTML is a property of the body object inside the document object that allows us to get or set the HTML content of the body element. 
+
+      // and inner HTML is a string that contains the HTML content of the body element. and in this case we are setting the innerHTML property of the body object to a new value, which is a string that contains an h1 element with the text "hello". and this will replace the existing content of the body element with the new content.
+
+      document.title = "DOM Manipulation"; // document object is direclty related with the Web page
+
+    // -------------------------------
+    */
+
+    /*
+    // -------------------------------
+
+    console.log(document.title);
+    document.title = 'DOM is very important';
+    console.log(document.title);
+
+    console.log(document.body); // a very important thing to notice that we can have HTML elements inside the JavaScript code. and this is because the JavaScript code is executed in the context of the HTML page, and the HTML elements are part of the page's DOM. so we can access and manipulate them using JavaScript.
+
+    // now JS has the control of the web page
+
+    console.log(typeof document.body); // object
+
+    console.log(document.body.innerHTML); // <button>hello</button>
+    // it shows everything inside the body element
+    // innerHTML is a property of the body object inside the document object that allows us to get or set the HTML content of the body element.
+
+    document.body.innerHTML = '<button>hello world</button>'; // this will replace the existing content of the body element with the new content.
+
+    //-------------------------------------
+    */
+
+    // another method of document -> querySelector
+    document.querySelector('button'); // selects the button element
+    // it is used to select a html element inside js
+    // a element inside js -> object (in short we can use the property of this object)
+
+    console.log(document.querySelector('button')); // will show up that element
+    console.log(document.querySelector('button').innerHTML); // will show the content of that specific element
+    document.querySelector('button').innerHTML = 'changed';
+
+    // to get a specific element -> we can use the attribute 'class'
+
+    console.log(document.querySelector('.second')); // dot is used to tell we are looking for class not directly for the element
+    // dot usage is called class selector -> also used in css
+
+    const buttonElement = document.querySelector('.second');
+
+    console.log(buttonElement);
+
+    // DOM conbines js and html together, it give js full control of the webpage
+
+  </script>
+</body>
+
+</html>
