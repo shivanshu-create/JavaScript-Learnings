@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Projects Styling -> Subscribe button + Amazon Shipping Calculator</title>
+
+  <style>
+
+      body {
+        font-family : Arial, Helvetica, sans-serif;
+      }
+
+      .btn {
+          display : flex;
+          margin-bottom : 5px;
+      }
+      .js-subscribe {
+          background-color : rgb(8, 7, 7);
+          color : white;
+          padding-top : 5px; /* this is the padding from the top of the button */
+          padding-bottom : 5px; /* this is the padding from the bottom of the button */
+          padding-left : 10px; /* this is the padding from the left of the button */
+          padding-right : 10px; /* this is the padding from the right of the button */
+          font-size : 20px;
+          border-radius : 25px;
+          font-size : 15px;
+          border : 1.7px solid rgb(240, 0, 0);
+          font-weight : bold;
+          margin-bottom : 10px; /* this the space between the button and the next element
+          outside distance */
+          cursor : pointer; /* this is the cursor when we hover over the button 
+          changes the cursor behavior when we hover over it */
+      }
+
+      .js-subscribed {
+          background-color : gray;
+          color : black;
+          padding : 5px 10px; /* this is directly the padding from the top and bottom and left and right of the button */
+          border-radius : 25px;
+          font-size : 15px;
+          border : none;
+          margin-bottom : 10px;
+          cursor : pointer;
+      }
+
+      .js-input {
+          padding : 5px 10px; /* this is directly the padding from the top and bottom and left and right of the input */
+          font-size : 14px;
+          border-radius : 5px;
+          border : 2px solid rgb(240, 0, 0);
+      }
+
+      .js-calculate {
+          background-color : rgb(27, 218, 100);
+          color : rgb(8, 7, 7);
+          padding : 5px 10px;
+          border-radius : 5px;
+          font-size : 15px;
+          border : none;
+          font-weight : bold;
+          cursor : pointer; /* this is the cursor when we hover over the button */
+      }
+
+  </style>
+
+</head>
+
+<body>
+  <p>Youtube Subscribe Button</p>
+  
+  <!-- any element can have multiple classes and we can use them in the css to style the element -->
+  <button class="js-subscribe js-subscribe-button"
+  onclick="subscribe()"
+  >Subscribe</button>
+  <p class="js-display"></p>
+  <p class="js-under"></p>
+  <p class="js-over"></p>
+  <input 
+  placeholder="cost of order" 
+  class="js-input" 
+  onkeydown="
+    if(event.key === 'Enter') calculateTotal();
+  "> 
+        <!-- for input to enter live in page-->
+        <!-- here the onkeydown is the event listner
+          they check for the event to happen when a even happen
+          they work-->
+        <!--console.log(event)-> it tells what the person is doing with the keyboard 
+          here the event is also a object the checks the every event by the user 
+          event.key -> will tell what key the user has pressed on the input -->
+  <button class="js-calculate" onclick="
+    calculateTotal();
+  ">Calculate</button>
+
+  <p class="js-total"></p>
+  <script>
+    document.querySelector('.js-display').innerHTML = 'Amazon Shipping Calculator';
+    document.querySelector('.js-under').innerHTML = 'Order under $40 = +$10 shipping';
+    document.querySelector('.js-over').innerHTML = 'Order under $40 = Free shipping';
+
+    function calculateTotal(){
+      const inputElement = document.querySelector('.js-input');
+      let cost = Number(inputElement.value); // default we get a string so we need to convert it to number
+
+      if(cost > 40) 
+        document.querySelector('.js-total').
+          innerHTML = `Total cost is $${cost}`
+
+      else{
+        cost += 10;
+        document.querySelector('.js-total').
+          innerHTML = `Total cost is $${cost}`
+      }
+    }
+
+    function subscribe() {
+      const buttonElement = document.querySelector('.js-subscribe');
+
+      if(buttonElement.innerText === 'Subscribe'){
+        buttonElement.innerText = 'Subscribed';
+        // now we learn classList and how to add and remove classes from the element
+        buttonElement.classList.add('js-subscribed');
+      }
+
+      else {
+        buttonElement.innerText = 'Subscribe';
+        // now on unsubscribing we will remove the class from the element in order to make it back to the original state
+        buttonElement.classList.remove('js-subscribed');
+
+        // so basically we can add and remove classes from the element using classList.add and classList.remove
+        // and with this we can change the styling of the element using css and classes
+      }
+    }
+
+  </script>
+</body>
+
+</html>
+

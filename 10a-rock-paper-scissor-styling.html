@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rock Paper Scissor</title>
+  <!--this is also a void element used to
+  link the html with css file -->
+  <link rel="stylesheet" href="styles/10a-rock-paper-scissor-styling.css">
+  
+</head>
+
+<body>
+  <p class="title">Let's Play Rock Paper and Scissors</p>
+
+  <div class="btn">
+
+  <button class="js-style" onclick="
+      playGame('✊');
+    ">
+    ✊
+  </button>
+
+  <button class="js-style" onclick="
+      playGame('✋');
+    ">
+    🖐
+  </button>
+
+  <button class="js-style" onclick="
+      playGame('✌️');
+    ">
+    ✌️
+  </button>
+
+  </div>
+
+  <p class="js-result"></p>
+  <p class="js-moves"></p>
+  <p class="js-score"></p> <!--paragraph element is also known as block element -> it takes the entir line by itself-->
+  <button onclick="resetScore()" class="resetScore">Reset Score</button>
+
+  <!-- in this way we can move the javascript file into a different file and now it will make the code more cleaner -->
+  <script src="java_script/10a-rock-paper-scissor-styling.js"></script>
+</body>
+
+</html>
