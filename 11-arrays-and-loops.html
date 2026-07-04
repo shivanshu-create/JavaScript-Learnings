@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Arrays and Loops</title>
+
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+  
+  <script>
+    /*
+
+     const myArray = [10, 20, 30, 40, 50];
+     console.log(myArray);
+     console.log(myArray[0]);
+
+     // we can change the value of an array element
+     myArray[0] = 100;
+     console.log(myArray[0]);
+
+     console.log(typeof myArray); // object - special type of oject
+     console.log(myArray.length); // 5
+
+     // check array
+
+     console.log(Array.isArray(myArray)); // true
+     // we can have different types of data in an array
+      const myArray2 = [10, "hello", true, null, undefined, {
+        name: "John",
+        age: 30
+      }];
+      console.log(myArray2);
+
+      myArray.push(60); // add an element to the end of the array
+      console.log(myArray);
+
+      myArray.splice(3, 3); // first-index and second - number of elements
+      console.log(myArray);
+
+      */
+
+      let i = 1;
+
+      while(i < 5) {
+        console.log(i);
+        i++;
+      }
+
+      for(let i = 0;i < 4;i++){
+        console.log(i);
+      }
+
+      // arrays are references
+      // they point towards the same adderess in the memory
+      const myArray = [10, 20, 30, 40, 50];
+      const asArray = myArray;
+      // both of these are pointing the same location
+      // if we do change in the one -> other will also affect
+
+      // to make a copy
+      asArray = myArray.slice();
+
+      // destructring -> to get the first and any element
+      const [firstValue, secondValue] = [1,2,3];
+      
+      // break and continue -> same as C++
+      // Remainder -> same as C++
+      // Loop Logic -> same as C++
+
+
+  </script>
+</body>
+
+</html>
+

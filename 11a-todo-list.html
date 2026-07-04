@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>To Do List</title>
+
+  <link rel="stylesheet" 
+  href="styles/11a-todo-list.css">
+
+</head>
+
+<body>
+  <!--------------Input1---------------->
+  <div>
+    <p class="para1">Todo list Practice 1</p>
+    <input class="input1" placeholder="Add something.." 
+    onkeydown="
+      if(event.key === 'Enter') itemAdd1();
+    ">
+    <button class="add1"
+    onclick="
+      itemAdd1();
+    ">Add</button>
+    <button onclick="
+      eraseList();
+    ">Erase List</button>
+  </div>
+
+  <!-------------Input 2---------------->
+  <div class="whole-todo">
+    <p class="para2">Todo list Practice 2</p>
+    
+    <div class="todo-grid2">
+      <input type="date" class="dateInput">
+      <input class="input2" placeholder="add something.." onkeydown="
+        if(event.key === 'Enter') itemAdd2();
+      ">
+      <button class="Add2" onclick="
+        itemAdd2();
+      ">Add</button>
+      <button class="erase2" 
+      onclick="
+        eraseList2();
+      ">Erase List</button>
+      </div>
+      
+    
+    <div class="show grid-show"></div>
+  </div>
+  
+  
+  <script src="java_script/11a-todo-list.js"></script>
+</body>
+
+</html>
+
