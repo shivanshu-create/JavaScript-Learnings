@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Advance Functions</title>
+
+  <style>
+
+  </style>
+
+</head>
+
+<body>
+  <button class="js-button">click</button>
+  
+  <script>/*
+    function greeting() { // we can use hoisting
+      console.log('hello');
+    }
+    greeting();
+
+    const function1 = function greeting() {
+                                console.log('hello1');
+                              }
+    console.log(function1)
+    console.log(typeof function1) // function
+
+    function1(); // this will run the code inside function
+
+    const function2 = function () { // anonnymous function
+                                console.log('hello2');
+                              }
+    function2();
+
+    // function is a value here -> so we can save it in a variable or object
+
+    // function inside a object -> method
+
+    //we can pass a parameter in a function
+
+    // we can also pass a funtion to a function
+
+    function run(param) {
+      param(); // now as the param is function now -> we call it.
+    }
+
+    run(function () {
+      console.log('hello4');
+    });
+
+    */
+
+    /*
+
+    // setTimeout() -> allows us to run a function in future
+
+    setTimeout(function() {   // two parameters are passed -> function and the time(to wait upto)
+      console.log('timeout');
+      console.log('timeout2');
+    }, 5000); // after 5 seconds -> it will run by itself
+
+    console.log('next');
+
+    // so this is called -> Asynchronous code
+    // it measn it won't wait for a line to finish before goint to the next line
+
+    // synchronous code - it will wait for the line to finish first.. all the code learned before is -> synchronous code
+
+    // so doesn't it stopes us -> it just waits in the background and then run as usual after the time completion
+
+    // setInterval() -> another built in function
+
+    // setInterval(function (){
+    //   console.log('Interval');
+    // },3000);
+
+    // this function will just keep  running within a certain
+    // time period
+
+    */
+
+    /*
+
+    // another way to loop through the array
+
+    let history = ['red','yellow','blue'];
+
+    history.forEach(function (value,index) {
+
+      if(value === 'yellow') return; // it does the same thing as 'continue'
+
+      console.log(index + ' ' + value);
+    });
+
+    // forEach method is easier to read 
+    // that's why we use mostly forEach method
+    // to use 'continue' -> use 'return'
+    // we don't have 'break' for forEach loop
+
+    // there are shorter way to write function
+    // called arrow functions
+
+    let arrowFunction = (param) => {
+      console.log('arrow function ran' + ' ' + param);
+    };
+
+    arrowFunction('hello world');
+    
+    // if we only have to pass one parameter -> we don't even need to write the brackets
+
+    let arrowFunction2 = param => {
+      console.log('hellow world,' + ' '  + param);
+    };  
+    
+    arrowFunction2('hello doesn\'t that');
+
+    // another shortcut -> one line arrow function
+
+    const oneLine = () => 2 + 3;
+    console.log(oneLine());
+
+    let abc = ['e','a','b'].forEach((value,index) => {
+      console.log(index + ' ' + value);
+    });
+
+    abc();
+
+    // arrow function -> doesn't support Hoisting.. means we can't call this function if it is not initiliazed earlier than calling
+    // while regular function supports Hoisting -> we don't need to care about the order.
+
+    const obj = {
+      // method: () => {
+
+      // },
+
+      method() { // shorthand syntax
+
+      }
+    };
+
+    */
+
+    /*
+    // now we learn another method called - addEventListener
+    // it lets us iteract with the element
+    
+    const button = document.querySelector('.js-button');
+
+    const clickEvList = () => {
+      console.log('clicked');
+    }
+    button.addEventListener('click', clickEvList);
+    // this code does the same thing as onclick attribute
+    
+    // its advantages -> it lets us add multiple event listeners..
+
+    button.addEventListener('click', () => {
+      console.log('clicked2');
+    });
+    // this code will also run simultaneously
+
+    // now let's see the removeEventListener
+    // if we want that first event listener shouldn't work -> we use removeEventListener
+
+    // which will take two parameters -> first 'event name' and second function name -> so the function should be defined somewhere and then used there
+
+    button.removeEventListener('click', clickEvList);
+
+    // now let's learn the keydown event with its special object called event
+    // this will let us know which key is been pressed, on the page
+
+    document.body.addEventListener('keydown',(event) => {
+      console.log(event.key) // this method will tell us the key pressed
+    }); 
+
+    // for the event 'keydown' it provides us the oject 'event'
+
+    */
+
+    // now we are gonna learn two more array methods -> called '.filter()' and '.method()'
+
+    // this works the same as the forEach
+    // it takes the array and runs the same function for every element with passing a two passing two parameters -> value and index
+    // but the difference is -> this time this returns something -> and based on that it creates a different array and saves values in it
+    // it is a like filtering elements
+
+    const onlyPositives = [1,2,3,-5,-1,5].filter((value,index) => {
+      if(value > 0) return true;
+    });
+
+    console.log(onlyPositives);
+
+    // '.map()' -> creates a another array and fills the value which gets returns from the each function
+
+    // means it will create a another array and keep the elements which are got return from the array for each value
+
+    const returnArray = [1,1,5].map((value,index) => {
+      return value * 10;
+    });
+
+    console.log(returnArray);
+    // it will print an array with every value 10 times
+
+    // there is a shorter way to write the same function if only one parameter has used and if the code is one liner then we can directly write it as ->
+
+    returnArray = [1,1,5].map(value => value * 10);
+    // this code will also work as the same -> return is not needed as well
+
+
+    // last concept -> 'Closure'
+    // if a function has access to a value
+    // then it will always have access to that value
+    // value get packaged together (enclosed) with the function
+    
+  </script>
+</body>
+
+</html>
+
