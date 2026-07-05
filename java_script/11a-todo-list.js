@@ -51,18 +51,28 @@ function renderHistory() {
     show += `
     <div class="js-date">${todoList2[i].date}</div>  
     <div class="js-todo">${todoList2[i].name}</div>
-    <button class ="removeButton" onclick="
-      todoList2.splice(${i},1);
-      renderHistory();
-    ">Remove</button>
+    <button class ="removeButton">Remove</button>
     `;
   }
   document.querySelector('.show').innerHTML = show;
+
+  const removeButton = document.querySelectorAll('.removeButton');
+  // it will give the list of all the elments with class 'removeButton'
+
+  removeButton.forEach((value,index) => {
+    value.addEventListener('click', () => {
+      todoList2.splice(index,1);
+      renderHistory();
+    });
+  });
+
 }
 
 function eraseList2(){
   localStorage.removeItem('todo-list2');
   todoList2 = [];
   // console.log(todoList2);
+  renderHistory();
 }
 
+// Learning: The first code failed because the event listeners were added before the remove buttons were created in the DOM. The second code worked because the buttons were created first and then the event listeners were attached.
